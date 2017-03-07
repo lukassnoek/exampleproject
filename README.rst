@@ -1,15 +1,19 @@
 exampleproject
 ==============
 .. image:: https://travis-ci.org/lukassnoek/exampleproject.svg?branch=master
-    :target: https://travis-ci.org/lukassnoek/exampleproject
+  :target: https://travis-ci.org/lukassnoek/exampleproject
+
+.. image:: https://coveralls.io/repos/github/lukassnoek/exampleproject/badge.svg?branch=master
+  :target: https://coveralls.io/github/lukassnoek/exampleproject?branch=master
 
 Example project for testing / documentation tutorial. This repo contains some standard files to perform
 testing (with py.test and continuous integration with Travis CI) and files/scripts for automating documentation.
 
 Branches
 --------
-The master branch can be used to try out things (e.g. create documentation with sphinx, write some tests); 
-the `reference` branch contains all sorts of nifty features/tools and can be used as, well, a reference.
+The master branch represents a fully set-up package with testing (and continuous integration),
+automatic documentation generation, and coverage reporting; the `tryout` branch can be used
+to "practice" setting up Sphinx, tests, etc.
 
 Dependencies
 ------------
