@@ -1,5 +1,8 @@
 exampleproject
 ==============
+.. image:: https://travis-ci.org/lukassnoek/exampleproject.svg?branch=master
+    :target: https://travis-ci.org/lukassnoek/exampleproject
+
 Example project for testing / documentation tutorial. This repo contains some standard files to perform
 testing (with py.test and continuous integration with Travis CI) and files/scripts for automating documentation.
 

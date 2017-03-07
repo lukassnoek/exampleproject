@@ -25,7 +25,7 @@ install:
   - python setup.py install
 
 script:
-  - py.test -v --pep8 --cov skbold --cov-report term-missing examplepackage
+  - py.test -v --cov examplepackage --cov-report term-missing src
 
 after_success:
     - coveralls
