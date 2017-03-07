@@ -16,10 +16,10 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
-
+import os
+import sys
+sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath('../'))
 
 # -- General configuration ------------------------------------------------
 
@@ -53,6 +53,17 @@ project = u'examplepackage'
 copyright = u'2017, Lukas Snoek'
 author = u'Lukas Snoek'
 
+# This suppresses warnings from badges (i.e. nonlocal images)
+suppress_warnings = ['image.nonlocal_uri']
+
+# If true, '()' will be appended to :func: etc. cross-reference text.
+add_function_parentheses = False
+
+# If true, the current module name will be prepended to all description
+# unit titles (such as .. function::).
+add_module_names = False
+
+
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
@@ -80,13 +91,14 @@ pygments_style = 'sphinx'
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
 
-
 # -- Options for HTML output ----------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#
-html_theme = 'alabaster'
+
+import sphinx_rtd_theme
+html_theme = "sphinx_rtd_theme"
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
