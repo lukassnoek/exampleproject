@@ -9,7 +9,8 @@
    :maxdepth: 2
    :caption: Contents:
 
-
+   sphinx_how_to_link
+   source/src
 
 
 Indices and tables
