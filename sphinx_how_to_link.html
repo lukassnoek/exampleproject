@@ -1,0 +1,369 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Instructions on how to set-up Sphinx &mdash; examplepackage  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="examplepackage  documentation" href="index.html"/>
+        <link rel="next" title="src package" href="source/src.html"/>
+        <link rel="prev" title="exampleproject" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> examplepackage
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Instructions on how to set-up Sphinx</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#preparations">Preparations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sphinx-quickstart">Sphinx-quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conf-py-settings">Conf.py settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#add-path">Add path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enable-numpy-docstrings">Enable Numpy-docstrings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#some-settings-to-make-the-documentation-look-nicer">Some settings to make the documentation look nicer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#html-options">HTML options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#makefile-settings">Makefile settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-apidoc">Run apidoc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tips-tricks">Tips &amp; tricks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#serve-your-documentation">Serve your documentation!</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="source/src.html">src package</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">examplepackage</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Instructions on how to set-up Sphinx</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/sphinx_how_to_link.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="instructions-on-how-to-set-up-sphinx">
+<h1>Instructions on how to set-up Sphinx<a class="headerlink" href="#instructions-on-how-to-set-up-sphinx" title="Permalink to this headline">¶</a></h1>
+<p>Setting up Sphinx for documentation of your Python project is not as easy as it seems.
+Well, if you want to do it properly. This document walks you through the basic setup.</p>
+<div class="section" id="preparations">
+<h2>Preparations<a class="headerlink" href="#preparations" title="Permalink to this headline">¶</a></h2>
+<p>First, make sure your dependencies are set-up properly.
+Download Sphinx with pip (<cite>pip install sphinx</cite>) and, while you&#8217;re at it,
+download the ReadTheDocs-theme (<cite>pip install sphinx_rtd_theme</cite>) - in my opinion
+the nicest template (to see how it looks like, check e.g. skbold.readthedocs.io).</p>
+</div>
+<div class="section" id="sphinx-quickstart">
+<h2>Sphinx-quickstart<a class="headerlink" href="#sphinx-quickstart" title="Permalink to this headline">¶</a></h2>
+<p>Once you&#8217;re all set up, create a directory <cite>docs</cite> in the root of your package and run the command
+<cite>sphinx-quickstart</cite> in your terminal. This will prompt you to set a couple of options.
+I recommend going with the default values, except for the following options:
+<cite>autodoc</cite>, <cite>mathjax</cite>, <cite>ifconfig</cite>, <cite>viewcode</cite>, and <cite>Makefile</cite> - set these to <cite>y</cite>.
+(Set <cite>Windows command file</cite>, obviously, to <cite>n</cite>).</p>
+<p>Now, this quickstart command created three files:</p>
+<ul class="simple">
+<li>conf.py: a file with settings for Sphinx</li>
+<li>index.rst: the &#8216;master-doc&#8217; (kinda like a index.html file)</li>
+<li>Makefile: a makefile to create, once you have a bunch of .rst-files, html pages with a single command</li>
+</ul>
+</div>
+<div class="section" id="conf-py-settings">
+<h2>Conf.py settings<a class="headerlink" href="#conf-py-settings" title="Permalink to this headline">¶</a></h2>
+<p>You can customize you&#8217;re entire Sphinx setup in the conf.py file. Here, I outline some recommended
+settings.</p>
+<div class="section" id="add-path">
+<h3>Add path<a class="headerlink" href="#add-path" title="Permalink to this headline">¶</a></h3>
+<p>To make sure Sphinx can find your source files, modify <cite>sys.path</cite>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>`sys.path.insert(0, os.path.abspath(&#39;.&#39;))
+sys.path.insert(0, os.path.abspath(&#39;../&#39;))`
+</pre></div>
+</div>
+</div>
+<div class="section" id="enable-numpy-docstrings">
+<h3>Enable Numpy-docstrings<a class="headerlink" href="#enable-numpy-docstrings" title="Permalink to this headline">¶</a></h3>
+<p>To enable Numpy-docstrings (the legible alternative to regular Python docstrings), add the following:</p>
+<ul class="simple">
+<li><cite>sphinx_ext_napoleon</cite> to the <cite>extensions</cite> list;</li>
+<li>set <cite>napoleon_use_ivar = True</cite>; this enables attributes to be documented;</li>
+<li>set <cite>napoleon_include_init_with_doc</cite>; this enables parsing of <cite>__init__</cite> methods (if desired);</li>
+</ul>
+</div>
+<div class="section" id="some-settings-to-make-the-documentation-look-nicer">
+<h3>Some settings to make the documentation look nicer<a class="headerlink" href="#some-settings-to-make-the-documentation-look-nicer" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>set <cite>add_function_parentheses = False</cite>;</li>
+<li>set <cite>add_module_names = False</cite>;</li>
+</ul>
+</div>
+<div class="section" id="html-options">
+<h3>HTML options<a class="headerlink" href="#html-options" title="Permalink to this headline">¶</a></h3>
+<p>To enable the RTD-theme, add the following:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sphinx_rtd_theme</span>
+<span class="n">html_theme</span> <span class="o">=</span> <span class="s2">&quot;sphinx_rtd_theme&quot;</span>
+<span class="n">html_theme_path</span> <span class="o">=</span> <span class="p">[</span><span class="n">sphinx_rtd_theme</span><span class="o">.</span><span class="n">get_html_theme_path</span><span class="p">()]</span>
+</pre></div>
+</div>
+<p>Also add <cite>suppress_warnings = [&#8216;image.nonlocal_uri&#8217;]</cite>.</p>
+</div>
+</div>
+<div class="section" id="makefile-settings">
+<h2>Makefile settings<a class="headerlink" href="#makefile-settings" title="Permalink to this headline">¶</a></h2>
+<p>You can modify your Makefile to add a <cite>make latex</cite> command that builds a PDF-version of your documentation;
+there are plenty of resources on how to do that online.</p>
+</div>
+<div class="section" id="run-apidoc">
+<h2>Run apidoc<a class="headerlink" href="#run-apidoc" title="Permalink to this headline">¶</a></h2>
+<p>Sphinx-apidoc is a Sphinx tool that automatically parses your *.py files and generates
+documentation for them in the format of .rst files. Before running this, let&#8217;s first create a directory, <cite>source</cite>,
+in which to store the to-be-created .rst file (assuming that you&#8217;re in <cite>docs</cite>):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ mkdir source
+</pre></div>
+</div>
+<p>Then, when invoking apidoc, you want to run something along the following command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ sphinx-apidoc -o source [opts] [packagedir] [patterns_to_exclude]
+</pre></div>
+</div>
+<p>To make life easier, I created a short bash-script that does this (with some recommended options): <cite>run_apidoc.sh</cite>.
+After running this, you&#8217;ll see that Sphinx created a bunch of rst-files in the <cite>source/</cite> directory.</p>
+<p>Now, in a final step, let&#8217;s transform the rst-files to html using the makefile:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ make html
+</pre></div>
+</div>
+<p>Check out the <cite>_build/html</cite> directory - this should contain (amongst other files) an <cite>index.html</cite>.
+Click it and check out your brand new documentation!</p>
+</div>
+<div class="section" id="tips-tricks">
+<h2>Tips &amp; tricks<a class="headerlink" href="#tips-tricks" title="Permalink to this headline">¶</a></h2>
+<p>I often like to include my README.rst of my main repository in my documentation (keeps the info
+from Github, PyPI, and your documentation in sync). This is very easy to do: just open your
+index.rst, remove the first line (&#8220;Welcome to {package}&#8217;s documentation!&#8221;), and add:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">include</span><span class="p">::</span> <span class="o">../</span><span class="n">README</span><span class="o">.</span><span class="n">rst</span>
+</pre></div>
+</div>
+<p>Now, in this document, you also see a &#8220;toctree&#8221; definition. This is a table-of-contents object,
+which we&#8217;d like to list our code documentation. To do so, simply add <cite>source/src</cite> underneath it
+(watch the indentation!). Now, rebuild your html, and you&#8217;ll see a nice list of our code!
+(You can adjust the &#8216;depth&#8217; of the toctree with the argument <cite>maxdepth</cite>.</p>
+</div>
+<div class="section" id="serve-your-documentation">
+<h2>Serve your documentation!<a class="headerlink" href="#serve-your-documentation" title="Permalink to this headline">¶</a></h2>
+<p>As a very last step, we need to upload and host our newly created documentation software.
+For this, there are two (main) choices: ReadTheDocs.org or using github-pages.
+ReadTheDocs is basically a plugin for Github, that looks for a docs/
+directory and then will build the documentation. This can be done for any branch
+(or even multiple branches simultaneously) and can also output latex-rendered PDFs.
+For most packages/projects, this is somewhat overkill though, so I generally
+recommend just using github-pages. For more info on RTD, check <cite>http://ericholscher.com/blog/2016/jul/1/sphinx-and-rtd-for-writers/</cite>.</p>
+<p>To use github-pages to serve your documentation, simply create your html-files (<cite>make html</cite>),
+create a new branch - <cite>gh-pages</cite> - and put those html-files (found under docs/_build/html) at the root-directory.
+<em>Make sure to remove all other directories and include a .nojekyll file</em> (this is used by Github internally to
+include files/directories with an underscore). Now, push your gh-pages branch to github. If you now go to the
+settings tab of your repo, then you&#8217;ll find a GitHub Pages section in which you can set the &#8216;Source&#8217; to the
+gh-pages branch. After you&#8217;ve done this, you can go to {your-github-name.github.io/{packagename} to check
+out your documentation!</p>
+<p>(I automated the creation/updating of the documentation with a script: update_docs_and_push.sh. Invoking this script will
+call <cite>make html</cite> and transfer it to the gh-pages branch and then push that branch, with some housekeeping in between. You
+can also choose for a regular push to your current brain on origin; in that case, append &#8216;rtd&#8217; to your call to the function.)</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="source/src.html" class="btn btn-neutral float-right" title="src package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="exampleproject" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Lukas Snoek.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
