@@ -1,4 +1,4 @@
-exampleproject
+examplepackage
 ==============
 .. image:: https://travis-ci.org/lukassnoek/exampleproject.svg?branch=master
   :target: https://travis-ci.org/lukassnoek/exampleproject

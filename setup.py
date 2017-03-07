@@ -5,7 +5,7 @@ def readme():
         return f.read()
 
 setup(
-    name='skbold',
+    name='examplepackage',
     version=0.1,
     description='An example package for tutorial purposes',
     long_description=readme(),

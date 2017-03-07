@@ -9,6 +9,6 @@ import numpy as np
 from subpackage.functions import demean
 
 arr = np.random.randn(100, 100)
-arr_out = demean(arr)
+arr_out = demean(arr, to_file=False)
 
 
