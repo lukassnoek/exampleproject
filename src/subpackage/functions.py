@@ -44,6 +44,8 @@ def demean(arr, to_file=True):
     ----
     This is another heading!
 
+    References
+    ----------
     .. [1] Snoek. (2017). A sphinx/RTD/pytest/travis tutorial.
 
     """
@@ -53,10 +55,6 @@ def demean(arr, to_file=True):
         np.save(op.join(os.getcwd(), 'arr_out'), arr_new)
 
     return arr_new
-
-
-arr = np.random.randn(100, 100) + 5
-print(demean(arr, to_file=False).mean(axis=0))
 
 
 class Demeaner(object):
@@ -78,9 +76,6 @@ class Demeaner(object):
     ----------
     arr_shape : tuple
         Shape of the array.
-
-    .. note:: No need to define the methods here. They are
-      parsed automatically!
 
     """
 
