@@ -100,4 +100,24 @@ which we'd like to list our code documentation. To do so, simply add `source/src
 (watch the indentation!). Now, rebuild your html, and you'll see a nice list of our code!
 (You can adjust the 'depth' of the toctree with the argument `maxdepth`.
  
+Serve your documentation!
+-------------------------
+As a very last step, we need to upload and host our newly created documentation software. 
+For this, there are two (main) choices: ReadTheDocs.org or using github-pages. 
+ReadTheDocs is basically a plugin for Github, that looks for a docs/ 
+directory and then will build the documentation. This can be done for any branch
+(or even multiple branches simultaneously) and can also output latex-rendered PDFs.
+For most packages/projects, this is somewhat overkill though, so I generally
+recommend just using github-pages. For more info on RTD, check `http://ericholscher.com/blog/2016/jul/1/sphinx-and-rtd-for-writers/`.
 
+To use github-pages to serve your documentation, simply create your html-files (`make html`),
+create a new branch - `gh-pages` - and put those html-files (found under docs/_build/html) at the root-directory.
+*Make sure to remove all other directories and include a .nojekyll file* (this is used by Github internally to
+include files/directories with an underscore). Now, push your gh-pages branch to github. If you now go to the
+settings tab of your repo, then you'll find a GitHub Pages section in which you can set the 'Source' to the
+gh-pages branch. After you've done this, you can go to {your-github-name.github.io/{packagename} to check
+out your documentation!
+
+(I automated the creation/updating of the documentation with a script: update_docs_and_push.sh. Invoking this script will
+call `make html` and transfer it to the gh-pages branch and then push that branch, with some housekeeping in between. You
+can also choose for a regular push to your current brain on origin; in that case, append 'rtd' to your call to the function.)
