@@ -14,9 +14,8 @@ fi
 
 
 if [ $dest == 'rtd' ]; then
+    # Docs will be built on RTD!
     echo "Updating docs for branch '$cbranch' and pushing to origin & ReadTheDocs"
-    make clean
-    make html
     git add .
     git commit -m "Update docs"
     git push
